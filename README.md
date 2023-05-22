@@ -1,7 +1,8 @@
 # Video-Poker-Vice-CLI-Linux-Android
 A command line Video Poker Game for Linux/Android
 
-On Linux Simply execute the script from any terminal: ./scriptname
+On Linux Simply execute the script from any terminal: ./scriptname 
+<br>
 On Android install Termux and execute: bash scriptname
 
 Thank you!
