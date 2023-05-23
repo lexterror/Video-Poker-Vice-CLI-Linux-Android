@@ -12,3 +12,7 @@ Thank you!
 
 
 
+
+https://github.com/lexterror/Video-Poker-Vice-CLI-Linux-Android/assets/16135535/2c1b9bba-a81c-4322-bd48-3a6eac443e41
+
+
