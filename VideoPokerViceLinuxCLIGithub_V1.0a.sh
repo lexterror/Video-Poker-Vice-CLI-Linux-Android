@@ -593,6 +593,11 @@ currentWin="${WIN}Win!!! Two Pair"
 myTwoPair=1
 fi
 
+if [[ $cardComp1 = $cardComp5 && $cardComp2 = $cardComp4 ]];then
+currentWin="${WIN}Win!!! Two Pair"
+myTwoPair=1
+fi
+
 #Three of a Kind
 if [[ $cardComp1 = $cardComp2 && $cardComp2 = $cardComp3 ]];then
 currentWin="${WIN}Win!!! Three of a Kind"
