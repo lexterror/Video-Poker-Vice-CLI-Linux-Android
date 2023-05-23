@@ -9,19 +9,20 @@ POINTS='\033[0;34m'
 URBAN='\033[0;33m'
 TITLE='\033[0;35m'
 
-D='\033[0;36m'
-C='\033[0;32m'
-S='\033[0;0m'
-H='\033[0;31m'
+D='\033[0;34m\033[107m'
+C='\033[0;32m\033[107m'
+S='\033[0;97m\033[107m'
+H='\033[0;31m\033[107m'
 
 
 myCards=("01C" "01D" "01H" "01S" "02C" "02D" "02H" "02S" "03C" "03D" "03H" "03S" "04C" "04D" "04H" "04S" "05C" "05D" "05H" "05S" "06C" "06D" "06H" "06S" "07C" "07D" "07H" "07S" "08C" "08D" "08H" "08S" "09C" "09D" "09H" "09S" "10C" "10D" "10H" "10S" "11C" "11D" "11H" "11S" "12C" "12D" "12H" "12S" "13C" "13D" "13H" "13S")
 myFaces=("01" "01" "01" "01" "02" "02" "02" "02" "03" "03" "03" "03" "04" "04" "04" "04" "05" "05" "05" "05" "06" "06" "06" "06" "07" "07" "07" "07" "08" "08" "08" "08" "09" "09" "09" "09" "10" "10" "10" "10" "11" "11" "11" "11" "12" "12" "12" "12" "13" "13" "13" "13")
 mySuits=("C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S")
+mySymbols=("\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664")
 
 echo -e "${TITLE}Welcome To Video Poker Vice for Linux CLI${REGULAR}"
 echo -e "${URBAN}Brought to you by: SilentButFriendly${REGULAR}"
-echo " "
+echo -e ""
 echo "Features"
 echo "************************"
 echo "Card Decks: 1 (Standard 52)"
@@ -101,13 +102,17 @@ Reel4=$[$RANDOM % ${#myCards[@]}]
 Reel5=$[$RANDOM % ${#myCards[@]}]
 done
 
- 
+echo -e "Player Tokens:${POINTS}$playerPoints${REGULAR} Total Won:${POINTS}$totalPointsWon${REGULAR} Victories:${POINTS}$totalNumberWins${REGULAR}"
+echo " "
+echo " "
 
-echo -e "${URBAN}>>>${REGULAR} ${!mySuits[$Reel1]} ${myFaces[$Reel1]}${mySuits[$Reel1]} ${!mySuits[$Reel2]} ${myFaces[$Reel2]}${mySuits[$Reel2]} ${!mySuits[$Reel3]} ${myFaces[$Reel3]}${mySuits[$Reel3]} ${!mySuits[$Reel4]} ${myFaces[$Reel4]}${mySuits[$Reel4]} ${!mySuits[$Reel5]} ${myFaces[$Reel5]}${mySuits[$Reel5]} 
-  ${REGULAR}"
-echo " " 
+
+echo -e "${URBAN}     ${REGULAR} ${!mySuits[$Reel1]}\033[40m\e[1m${myFaces[$Reel1]}${mySymbols[$Reel1]}\033[49m  ${!mySuits[$Reel2]}\033[40m\e[1m${myFaces[$Reel2]}${mySymbols[$Reel2]}\033[49m  ${!mySuits[$Reel3]}\033[40m\e[1m${myFaces[$Reel3]}${mySymbols[$Reel3]}\033[49m  ${!mySuits[$Reel4]}\033[40m\e[1m${myFaces[$Reel4]}${mySymbols[$Reel4]}\033[49m  ${!mySuits[$Reel5]}\033[40m\e[1m${myFaces[$Reel5]}${mySymbols[$Reel5]}\033[49m 
+ ${REGULAR}\033[49m\e[0m "
+echo -e " " 
 
 read -p "Which to keep? " response
+echo " "
 echo " "
 
 if [[ $response = "10000" ]];then
@@ -501,7 +506,7 @@ suitComp4=${mySuits[$Reel4]}
 suitComp5=${mySuits[$Reel5]}
 
 #Start with Bet
-currentWin="${LOSE}Lose"
+currentWin="${LOSE}Game Over"
 playerPoints=$(($playerPoints-5))
 
 #Two Pair
@@ -796,15 +801,13 @@ alreadywon=1
 fi
 
 
-echo -e "${URBAN}>>>${REGULAR} ${!mySuits[$Reel1]} ${myFaces[$Reel1]}${mySuits[$Reel1]} ${!mySuits[$Reel2]} ${myFaces[$Reel2]}${mySuits[$Reel2]} ${!mySuits[$Reel3]} ${myFaces[$Reel3]}${mySuits[$Reel3]} ${!mySuits[$Reel4]} ${myFaces[$Reel4]}${mySuits[$Reel4]} ${!mySuits[$Reel5]} ${myFaces[$Reel5]}${mySuits[$Reel5]} 
-  ${REGULAR}"
-echo " " 
+echo -e "${URBAN}     ${REGULAR} ${!mySuits[$Reel1]}\033[40m\e[1m${myFaces[$Reel1]}${mySymbols[$Reel1]}\033[49m  ${!mySuits[$Reel2]}\033[40m\e[1m${myFaces[$Reel2]}${mySymbols[$Reel2]}\033[49m  ${!mySuits[$Reel3]}\033[40m\e[1m${myFaces[$Reel3]}${mySymbols[$Reel3]}\033[49m  ${!mySuits[$Reel4]}\033[40m\e[1m${myFaces[$Reel4]}${mySymbols[$Reel4]}\033[49m  ${!mySuits[$Reel5]}\033[40m\e[1m${myFaces[$Reel5]}${mySymbols[$Reel5]}\033[49m 
+ ${REGULAR}\033[49m\e[0m "
+echo -e " " 
 
 
 echo -e "$currentWin"
 echo -e "${REGULAR}"
-echo " "
-echo -e "Player Tokens:${POINTS}$playerPoints${REGULAR} Total Won:${POINTS}$totalPointsWon${REGULAR} Victories:${POINTS}$totalNumberWins${REGULAR}"
 echo " "
 myPair=0
 myTwoPair=0
