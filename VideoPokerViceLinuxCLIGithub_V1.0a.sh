@@ -851,6 +851,9 @@ echo -e "${URBAN}     ${REGULAR} ${!mySuits[$Reel1]}\033[40m\e[1m${myFaces[$Reel
 echo -e " " 
 
 read -p "Deal? " deal
+if [[ $deal = "q" ]];then
+exit
+fi
 currentWin='Game Over'
 printf "\033c"
 myPair=0
