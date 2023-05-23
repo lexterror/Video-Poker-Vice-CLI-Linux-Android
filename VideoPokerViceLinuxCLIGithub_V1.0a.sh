@@ -2,6 +2,9 @@
 
 #Video Poker Vice Card Game Linux CLI
 
+
+
+
 LOSE='\033[0;31m'
 REGULAR='\033[0;0m'
 WIN='\033[0;32m'
@@ -65,6 +68,7 @@ echo "************************"
 echo "Card Decks: 1 (Standard 52)"
 echo "Tokens per Play: 5"
 echo "Hold Two First Cards (Example): 11000"
+echo "Auto-deal: enabled"
 echo "************************"
 echo " "
 echo -e "${URBAN}Options${REGULAR} (default: Draw All Cards)"
@@ -823,6 +827,7 @@ echo "************************"
 echo "Card Decks: 1 (Standard 52)"
 echo "Tokens per Play: 5"
 echo "Hold Two First Cards (Example): 11000"
+echo "Auto-deal: enabled"
 echo "************************"
 echo " "
 echo -e "${URBAN}Options${REGULAR} (default: Draw All Cards)"
@@ -859,7 +864,15 @@ echo -e "${URBAN}     ${REGULAR} ${!mySuits[$Reel1]}\033[40m\e[1m${myFaces[$Reel
  ${REGULAR}\033[49m\e[0m "
 echo -e " " 
 
-read -p "Deal? " deal
+i=0
+while [ $i -le 5 ]; do
+  for s in / - \\ \|; do
+    printf "\r$s"
+    sleep .1
+  done
+  i=$((i+1))
+done
+
 if [[ $deal = "q" ]];then
 exit
 fi
