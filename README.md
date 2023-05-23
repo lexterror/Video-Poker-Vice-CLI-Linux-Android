@@ -9,11 +9,5 @@ Thank you!
 
 
 
-![Screenshot_20230523-155401](https://github.com/lexterror/Video-Poker-Vice-CLI-Linux-Android/assets/16135535/5b65a118-1049-4f73-a171-37063f631990)
-
-
-
-
-https://github.com/lexterror/Video-Poker-Vice-CLI-Linux-Android/assets/16135535/2c1b9bba-a81c-4322-bd48-3a6eac443e41
-
+![Screenshot_20230523-171752](https://github.com/lexterror/Video-Poker-Vice-CLI-Linux-Android/assets/16135535/fb35ffb6-a110-4b75-88c7-02a8a97b60ba)
 
