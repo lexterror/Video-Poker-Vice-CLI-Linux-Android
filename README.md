@@ -7,6 +7,4 @@ On Android install Termux and execute: bash scriptname
 
 Thank you!
 
-![Screenshot_20230522-175658](https://github.com/lexterror/Video-Poker-Vice-CLI-Linux-Android/assets/16135535/4dce7bba-903d-4bce-a7d6-ba460263776b)
-
-https://www.veed.io/view/86ce7034-9755-415e-97c7-ebeafb87fa87?panel=showcase
+![Screenshot_20230523-133934](https://github.com/lexterror/Video-Poker-Vice-CLI-Linux-Android/assets/16135535/26f1ca74-8dba-4fe0-bcbb-5255a4d1307c)
