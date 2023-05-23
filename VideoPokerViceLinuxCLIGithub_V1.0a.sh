@@ -45,8 +45,8 @@ echo "Straight: 70"
 echo "Flush: 100"
 echo "Full House: 200"
 echo "Four of a Kind: 300"
-#echo "Straight Flush: 400"
-#echo "Royal Flush: 500"
+echo "Straight Flush: 400"
+echo "Royal Flush: 500"
 echo "************************"
 echo " "
 
@@ -57,6 +57,7 @@ myFlush=0
 myStraight=0
 myFullHouse=0
 myFourOfAKind=0
+myStraightFlush=0
 myRoyalFlush=0
 alreadywon=0
 
@@ -439,6 +440,30 @@ done
 fi
 
 
+if [[ $response = "10111" ]];then
+Reel2=$[$RANDOM % ${#myCards[@]}]
+while [ $Reel1 == $Reel2 ] || [ $Reel3 == $Reel2 ] || [ $Reel3 == $Reel1 ] || [ $Reel4 == $Reel3 ] || [ $Reel4 == $Reel2 ] || [ $Reel4 == $Reel1 ] || [ $Reel5 == $Reel4 ] || [ $Reel5 == $Reel3 ] || [ $Reel5 == $Reel2 ] || [ $Reel5 == $Reel1 ]
+do 
+Reel2=$[$RANDOM % ${#myCards[@]}]
+done
+fi
+
+if [[ $response = "11101" ]];then
+Reel4=$[$RANDOM % ${#myCards[@]}]
+while [ $Reel1 == $Reel2 ] || [ $Reel3 == $Reel2 ] || [ $Reel3 == $Reel1 ] || [ $Reel4 == $Reel3 ] || [ $Reel4 == $Reel2 ] || [ $Reel4 == $Reel1 ] || [ $Reel5 == $Reel4 ] || [ $Reel5 == $Reel3 ] || [ $Reel5 == $Reel2 ] || [ $Reel5 == $Reel1 ]
+do 
+Reel4=$[$RANDOM % ${#myCards[@]}]
+done
+fi
+
+if [[ $response = "11011" ]];then
+Reel3=$[$RANDOM % ${#myCards[@]}]
+while [ $Reel1 == $Reel2 ] || [ $Reel3 == $Reel2 ] || [ $Reel3 == $Reel1 ] || [ $Reel4 == $Reel3 ] || [ $Reel4 == $Reel2 ] || [ $Reel4 == $Reel1 ] || [ $Reel5 == $Reel4 ] || [ $Reel5 == $Reel3 ] || [ $Reel5 == $Reel2 ] || [ $Reel5 == $Reel1 ]
+do 
+Reel3=$[$RANDOM % ${#myCards[@]}]
+done
+fi
+
 
 
 if [[ $response = "q" ]];then
@@ -701,12 +726,30 @@ currentWin="${WIN}Win!!! Straight"
 myStraight=1
 fi
 
+# StraightFlush
+if [[ $suitComp1 = $suitComp2 && $suitComp2 = $suitComp3 && $suitComp3 = $suitComp4 && $suitComp4 = $suitComp5 && $(($Reel1+1)) = $Reel2 && $(($Reel2+1)) = $Reel3 && $(($Reel3+1)) = $Reel4 && $(($Reel4+1)) = $Reel5 ]];then
+currentWin="${WIN}Win!!! Straight Flush"
+myFlush=1
+fi
+
+# RoyalFlush
+if [[ $Reel1 = 10 && $Reel5 = 01 && $suitComp1 = $suitComp2 && $suitComp2 = $suitComp3 && $suitComp3 = $suitComp4 && $suitComp4 = $suitComp5 && $(($Reel1+1)) = $Reel2 && $(($Reel2+1)) = $Reel3 && $(($Reel3+1)) = $Reel4 ]];then
+currentWin="${WIN}Win!!! Royal Flush"
+myFlush=1
+fi
+
 
 
 
 if [[ $myRoyalFlush = 1 ]];then
 playerPoints=$(($playerPoints+500))
 totalPointsWon=$(($totalPointsWon+500))
+totalNumberWins=$(($totalNumberWins+1))
+alreadywon=1
+fi
+if [[ $myStraightFlush = 1 ]];then
+playerPoints=$(($playerPoints+400))
+totalPointsWon=$(($totalPointsWon+400))
 totalNumberWins=$(($totalNumberWins+1))
 alreadywon=1
 fi
@@ -765,6 +808,7 @@ myFlush=0
 myStraight=0
 myFullHouse=0
 myFourOfAKind=0
+myStraightFlush=0
 myRoyalFlush=0
 alreadywon=0
 done
