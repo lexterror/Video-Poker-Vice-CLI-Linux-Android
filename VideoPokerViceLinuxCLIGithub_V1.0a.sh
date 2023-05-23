@@ -20,6 +20,43 @@ myFaces=("01" "01" "01" "01" "02" "02" "02" "02" "03" "03" "03" "03" "04" "04" "
 mySuits=("C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S" "C" "D" "H" "S")
 mySymbols=("\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664" "\u2667" "\u2662" "\u2661" "\u2664")
 
+
+myPair=0
+myTwoPair=0
+myThreeOfAKind=0
+myFlush=0
+myStraight=0
+myFullHouse=0
+myFourOfAKind=0
+myStraightFlush=0
+myRoyalFlush=0
+alreadywon=0
+
+RANDOM=$$$(date +%s)
+
+playerPoints=1000
+totalNumberWins=0
+totalPointsWon=0
+currentWin='Game Over'
+cardComp1=''
+cardComp2=''
+cardComp3=''
+cardComp4=''
+cardComp5=''
+suitComp1=''
+suitComp2=''
+suitComp3=''
+suitComp4=''
+suitComp5=''
+
+
+
+
+while true
+
+do
+
+printf "\033c"
 echo -e "${TITLE}Welcome To Video Poker Vice for Linux CLI${REGULAR}"
 echo -e "${URBAN}Brought to you by: SilentButFriendly${REGULAR}"
 echo -e ""
@@ -51,42 +88,6 @@ echo "Royal Flush: 500"
 echo "************************"
 echo " "
 
-myPair=0
-myTwoPair=0
-myThreeOfAKind=0
-myFlush=0
-myStraight=0
-myFullHouse=0
-myFourOfAKind=0
-myStraightFlush=0
-myRoyalFlush=0
-alreadywon=0
-
-RANDOM=$$$(date +%s)
-
-playerPoints=1000
-totalNumberWins=0
-totalPointsWon=0
-currentWin=''
-cardComp1=''
-cardComp2=''
-cardComp3=''
-cardComp4=''
-cardComp5=''
-suitComp1=''
-suitComp2=''
-suitComp3=''
-suitComp4=''
-suitComp5=''
-
-
-
-
-while true
-
-do
-
-
 
 Reel1=$[$RANDOM % ${#myCards[@]}]
 Reel2=$[$RANDOM % ${#myCards[@]}]
@@ -106,13 +107,17 @@ echo -e "Player Tokens:${POINTS}$playerPoints${REGULAR} Total Won:${POINTS}$tota
 echo " "
 echo " "
 
+echo -e "${LOSE}$currentWin"
+echo -e "${REGULAR}"
+echo " "
+
 
 echo -e "${URBAN}     ${REGULAR} ${!mySuits[$Reel1]}\033[40m\e[1m${myFaces[$Reel1]}${mySymbols[$Reel1]}\033[49m  ${!mySuits[$Reel2]}\033[40m\e[1m${myFaces[$Reel2]}${mySymbols[$Reel2]}\033[49m  ${!mySuits[$Reel3]}\033[40m\e[1m${myFaces[$Reel3]}${mySymbols[$Reel3]}\033[49m  ${!mySuits[$Reel4]}\033[40m\e[1m${myFaces[$Reel4]}${mySymbols[$Reel4]}\033[49m  ${!mySuits[$Reel5]}\033[40m\e[1m${myFaces[$Reel5]}${mySymbols[$Reel5]}\033[49m 
  ${REGULAR}\033[49m\e[0m "
 echo -e " " 
 
-read -p "Which to keep? " response
-echo " "
+read -p "Which to Hold? " response
+printf "\033c"
 echo " "
 
 if [[ $response = "10000" ]];then
@@ -801,14 +806,53 @@ alreadywon=1
 fi
 
 
+echo -e "${TITLE}Welcome To Video Poker Vice for Linux CLI${REGULAR}"
+echo -e "${URBAN}Brought to you by: SilentButFriendly${REGULAR}"
+echo -e ""
+echo "Features"
+echo "************************"
+echo "Card Decks: 1 (Standard 52)"
+echo "Tokens per Play: 5"
+echo "Keep Two First Cards (Example): 11000"
+echo "************************"
+echo " "
+echo "Options (default: Draw All Cards)"
+echo "************************"
+echo "q: Quit"
+echo "1: Hold Card"
+echo "0: Draw Card"
+echo "Enter: Accept"
+echo "************************"
+echo " " 
+echo "Rewards"
+echo "************************"
+echo "Two Pair: 30"
+echo "Three of a Kind: 50"
+echo "Straight: 70"
+echo "Flush: 100"
+echo "Full House: 200"
+echo "Four of a Kind: 300"
+echo "Straight Flush: 400"
+echo "Royal Flush: 500"
+echo "************************"
+echo " "
+
+echo -e "Player Tokens:${POINTS}$playerPoints${REGULAR} Total Won:${POINTS}$totalPointsWon${REGULAR} Victories:${POINTS}$totalNumberWins${REGULAR}"
+echo " "
+echo " "
+
+echo -e "${LOSE}$currentWin"
+echo -e "${REGULAR}"
+echo " "
+
+
 echo -e "${URBAN}     ${REGULAR} ${!mySuits[$Reel1]}\033[40m\e[1m${myFaces[$Reel1]}${mySymbols[$Reel1]}\033[49m  ${!mySuits[$Reel2]}\033[40m\e[1m${myFaces[$Reel2]}${mySymbols[$Reel2]}\033[49m  ${!mySuits[$Reel3]}\033[40m\e[1m${myFaces[$Reel3]}${mySymbols[$Reel3]}\033[49m  ${!mySuits[$Reel4]}\033[40m\e[1m${myFaces[$Reel4]}${mySymbols[$Reel4]}\033[49m  ${!mySuits[$Reel5]}\033[40m\e[1m${myFaces[$Reel5]}${mySymbols[$Reel5]}\033[49m 
  ${REGULAR}\033[49m\e[0m "
 echo -e " " 
 
-
-echo -e "$currentWin"
-echo -e "${REGULAR}"
-echo " "
+read -p "Deal? " deal
+currentWin='Game Over'
+printf "\033c"
 myPair=0
 myTwoPair=0
 myThreeOfAKind=0
