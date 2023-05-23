@@ -5,7 +5,7 @@
 LOSE='\033[0;31m'
 REGULAR='\033[0;0m'
 WIN='\033[0;32m'
-POINTS='\033[0;34m'
+POINTS='\033[0;33m'
 URBAN='\033[0;33m'
 TITLE='\033[0;35m'
 
@@ -64,7 +64,7 @@ echo "Features"
 echo "************************"
 echo "Card Decks: 1 (Standard 52)"
 echo "Tokens per Play: 5"
-echo "Keep Two First Cards (Example): 11000"
+echo "Hold Two First Cards (Example): 11000"
 echo "************************"
 echo " "
 echo "Options (default: Draw All Cards)"
@@ -116,7 +116,7 @@ echo -e "${URBAN}     ${REGULAR} ${!mySuits[$Reel1]}\033[40m\e[1m${myFaces[$Reel
  ${REGULAR}\033[49m\e[0m "
 echo -e " " 
 
-read -p "Which to Hold? " response
+read -p $'Which to \033[0;32mHold\033[0;0m? ' response
 printf "\033c"
 echo " "
 
@@ -823,7 +823,7 @@ echo "Features"
 echo "************************"
 echo "Card Decks: 1 (Standard 52)"
 echo "Tokens per Play: 5"
-echo "Keep Two First Cards (Example): 11000"
+echo "Hold Two First Cards (Example): 11000"
 echo "************************"
 echo " "
 echo "Options (default: Draw All Cards)"
