@@ -4,7 +4,10 @@ A command line Video Poker Game for Linux/Android
 On Linux Simply execute the script from any terminal: ./scriptname 
 <br>
 On Android install Termux and execute: bash scriptname
-
+<br> 
+On Windows install MobaXTerm and execute:
+bash scriptname
+<br>
 Thank you!
 
 
