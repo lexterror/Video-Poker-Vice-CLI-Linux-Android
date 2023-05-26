@@ -9,7 +9,9 @@ On Windows install MobaXTerm and execute:
 bash scriptname
 <br>
 Thank you!
-![Screenshot_20230526-011157](https://github.com/lexterror/Video-Poker-Vice-CLI-Linux-Android/assets/16135535/5c6fbb4b-107c-4a3a-be00-879ec8464605)
+
+![Screenshot_20230526-032614](https://github.com/lexterror/Video-Poker-Vice-CLI-Linux-Android/assets/16135535/0388529b-ab8e-40c9-b76b-4f8ce80610e4)
+
 
 
 
