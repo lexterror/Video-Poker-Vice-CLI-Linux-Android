@@ -65,23 +65,23 @@ echo " "
 echo -e "${TITLE}Welcome To Video Poker Vice for Linux CLI${REGULAR}"
 echo -e ""
 echo -e "${URBAN}Features${REGULAR}"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo "Card Decks: 1 (Standard 52)"
 echo "Tokens per Play: 5"
 echo "Hold Two First Cards (Example): 11000"
 echo "Auto-deal: enabled"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo " "
 echo -e "${URBAN}Options${REGULAR} (default: Draw All Cards)"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo "q: Quit"
 echo "1: Hold Card"
 echo "0: Draw Card"
 echo "Enter: Accept"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo " " 
 echo -e "${URBAN}Rewards${REGULAR}"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo "Two Pair: 30"
 echo "Three of a Kind: 50"
 echo "Straight: 70"
@@ -90,7 +90,7 @@ echo "Full House: 200"
 echo "Four of a Kind: 300"
 echo "Straight Flush: 400"
 echo "Royal Flush: 500"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo " "
 
 
@@ -655,23 +655,23 @@ echo " "
 echo -e "${TITLE}Welcome To Video Poker Vice for Linux CLI${REGULAR}"
 echo -e ""
 echo -e "${URBAN}Features${REGULAR}"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo "Card Decks: 1 (Standard 52)"
 echo "Tokens per Play: 5"
 echo "Hold Two First Cards (Example): 11000"
 echo "Auto-deal: enabled"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo " "
 echo -e "${URBAN}Options${REGULAR} (default: Draw All Cards)"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo "q: Quit"
 echo "1: Hold Card"
 echo "0: Draw Card"
 echo "Enter: Accept"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo " " 
 echo -e "${URBAN}Rewards${REGULAR}"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo "Two Pair: 30"
 echo "Three of a Kind: 50"
 echo "Straight: 70"
@@ -680,7 +680,7 @@ echo "Full House: 200"
 echo "Four of a Kind: 300"
 echo "Straight Flush: 400"
 echo "Royal Flush: 500"
-echo "************************"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 echo " "
 
 echo -e "Credit:${POINTS}$playerPoints${REGULAR} Earnings:${POINTS}$totalPointsWon${REGULAR} Wins:${POINTS}$totalNumberWins${REGULAR} Round:${POINTS}$Games${REGULAR}"
